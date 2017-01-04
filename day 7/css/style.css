@@ -1,0 +1,22 @@
+body {
+	background-color: #000000;
+}
+
+#container {
+	width: 520px;
+	height: 1456px;
+	margin: 0 auto;
+	background-color: #686868;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	background-color: #686868;
+	display: inline-block;
+	margin: 0 0;
+}
+
+.box:hover {
+	box-shadow: 0 0 8px white;
+}

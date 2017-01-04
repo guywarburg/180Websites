@@ -1,0 +1,35 @@
+body {
+	font-family: arial, sans-serif;
+	background-color: grey;
+}
+
+h1, h3 {
+	color: white;
+	text-align: center;
+}
+
+.myList {
+	list-style-type: none;
+}
+
+li {
+	float: left;
+	margin-left: 200px;
+	margin-top: 100px;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+
+.active {
+	display: none;
+}
+
+.final {
+	color: black;
+	font-size: 66px;
+	padding-top: 200px;
+	background-color: red;
+}

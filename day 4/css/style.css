@@ -1,0 +1,107 @@
+body {
+	background-color: grey;
+}
+
+h1 {
+	font-size: 56px;
+	font-family: sans-serif;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#container {
+	background-color: #f8f8f8;
+	height: 550px;
+	width: 750px;
+	margin: 50px auto;
+}
+
+#color-palette {
+	height: 100%;
+	position: relative;
+	float: left;
+	width: 30px;
+}
+
+.color-picker {
+	height: 25px;
+	width: 25px;
+	border: 1px solid black;
+	border-radius: 4px;
+	margin: 15px 0 0 15px;
+}
+
+.color-picker.active {
+	border: 3px solid blue;
+}
+
+#blue {
+	background-color: blue;
+}
+
+#red {
+	background-color: red;
+}
+
+#yellow {
+	background-color: yellow;
+}
+
+#white {
+	background-color: white;
+}
+
+#pic {
+	height: 500px;
+	width: 500px;
+	position: relative;
+	float: left;
+	border: 3px solid black;
+	margin: 15px 0 0 150px;
+}
+
+.empty-space {
+	border: 5px solid black;
+	position: relative;
+	float: left;
+	height: 100px;
+	width: 100px;
+}
+
+.empty-space.row1 {
+	border-top: none;
+	height: 55px;
+}
+
+
+.empty-space.row2 {
+	height: 150px;
+}
+
+
+.empty-space.row3 {
+	height: 35px;
+}
+
+.empty-space.row4 {
+	height: 230px;
+	border-bottom: none;
+}
+
+.empty-space.col1 {
+	border-left: none;
+	width: 55px;
+}
+
+.empty-space.col2 {
+	width: 150px;
+}
+
+.empty-space.col3 {
+	width: 35px;
+}
+
+.empty-space.col4 {
+	width: 230px;
+	border-right: none; 
+}
