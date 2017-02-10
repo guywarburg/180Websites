@@ -1,0 +1,104 @@
+body {
+	background-color: #95edc2;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.header {
+	text-align: left;
+	background-color: #eee;
+	border-bottom: 2px solid #66a587;
+	width: 100%;
+	height: 50px;
+}
+
+h1 {
+	padding: 15px;
+	font-size: 1.3em;
+	color: #666;
+	letter-spacing: 2px;
+}
+
+.explanation {
+	text-align: center;
+	width: 60%;
+	height: 400px;
+	margin: 50px auto;
+}
+
+p {
+    line-height: 2em;
+    font-size: 1.2em;
+}
+
+button {
+	margin: 0 auto;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	background-color: #12aa70;
+	width: 150px;
+	height: 50px;
+	font-size: 1em;
+	font-weight: bold;
+	outline: none;
+	margin-top: 50px;
+}
+
+button:disabled{
+	cursor: not-allowed;
+}
+
+.game {
+	display: none;
+	width: 60%;
+	height: 400px;
+	margin: 50px auto;
+	line-height: 2.5em;
+}
+
+.game div {
+	background-color: #aa2112;
+	color: #fff;
+}
+
+.gameTxt {
+	margin: 35px;
+}
+
+.score {
+	float: right;
+	width: 250px;
+	height: 50px;
+	border-radius: 5px 5px 0 0;
+}
+
+.letters {
+	clear: both;
+	font-size: 2em;
+	letter-spacing: 5px;
+	width: 100%;
+	height: 75px;
+	border-radius: 5px 0 5px 5px;
+	padding-top: 23px;
+}
+
+form {
+	display: inline-block;
+	margin: 35px auto 0 auto;
+}
+
+form input {
+	padding: 10px;
+	outline: none;
+	border: 2px #fff solid;
+	border-radius: 5px 0 0 5px;
+	width: 250px;
+}
+
+form button {
+	margin-left: -5px;
+	border-radius: 0 5px 5px 0;
+}

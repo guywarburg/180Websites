@@ -1,0 +1,14 @@
+body {
+	background-color: #000;
+	height: 600px;
+}
+
+#container {
+	background-color: #fff;
+	border-radius: 90px;
+	width: 100px;
+	height: 5px;
+	position: absolute;
+	top: 308px;
+	left: 670px;
+}

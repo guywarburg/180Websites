@@ -1,0 +1,157 @@
+body {
+	background-color: #b6b7ba;
+}
+
+.buttons {
+	position: absolute;
+	top: 150px;
+	left: 30px;
+}
+
+button {
+	background-color: #7f8082;
+	height: 40px;
+	width: 150px;
+	color: #222;
+	border: none;
+	box-shadow: none;
+	font-size: 20px;
+	display: block;
+	margin-top: 10px;	
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.container {
+	height: 300px;
+	width: 300px;
+	margin: 170px auto 0 auto;
+}
+
+.cloud {
+	position: relative;
+	margin-top: 20px;
+	background-color: #7f8082;
+	height: 130px;
+	width: 300px;
+	color: #222;
+	border-radius: 70px;
+	display: inline-block;
+}
+
+.cloud::before {
+    content: '';
+    display: inline-block;
+    background-color: #7f8082;
+    border-radius: 50%;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    left: 60px;
+    top: -130px;
+}
+
+.cloud::after {
+content: '';
+    display: inline-block;
+    background-color: #7f8082;
+    border-radius: 50%;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    top: -76px;
+    left: 52px;
+}
+
+.animate {
+	position: relative;
+	height: 1px;
+	width: 280px;
+	z-index: -1;
+	top: -87px;
+    left: 10px;
+}
+
+.drop {
+	position: absolute;
+	top: 0px;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	background-color: #153870;
+	border-radius: 50% 0 50% 50%;
+	-ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    -moz-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+}
+
+.heart {
+	position: absolute;
+	top: 0px;
+	height: 20px;
+	width: 20px;
+	background-color: #fc6ae6;
+	border-radius: 50% 50% 0 50%;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    -moz-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.heart::before {
+	content: '';
+    display: inline-block;
+    background-color: #fc6ae6;
+    border-radius: 50%;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    top: -4px;
+}
+
+.heart::after {
+	content: '';
+    display: inline-block;
+    background-color: #fc6ae6;
+    border-radius: 50%;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    left: -5px;
+    top: -16px;
+}
+
+/*** Animation ***/
+
+@keyframes fall {
+	0% {top: 0px;}
+	100% {top: 1000px;}
+}
+
+@-webkit-keyframes fall {
+	0% {top: 0px;}
+	100% {top: 1000px;}
+}
+
+@-ms-keyframes fall {
+	0% {top: 0px;}
+	100% {top: 1000px;}
+}
+
+@-moz-keyframes fall {
+	0% {top: 0px;}
+	100% {top: 1000px;}
+}
+
+.animation {
+	animation-name: fall;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+
+
+
+

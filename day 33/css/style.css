@@ -1,0 +1,97 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-color: #d0d8e5;
+	min-height: 100%;
+}
+
+h1 {
+	font-family: serif;
+	font-size: 2.5em;
+	text-shadow: 1px 1px 5px #fff;
+	margin-top: 20px;
+	margin-left: 20px;
+	color: #9da0a5;
+}
+
+.container {
+	height: 500px;
+	width: 730px;
+	margin: 150px auto 0 auto;
+}
+
+.word {
+	width: 700px;
+	height: 150px;
+	background-color: #fff;
+	color: #494949;
+	text-align: center;
+	position: relative;
+	font-size: 2.5em;
+	line-height: 3.5em;
+	letter-spacing: 2px;
+	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.word:before, .word:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.word:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.myButton {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	margin: 50px auto 0 auto;
+	text-align: center;
+	color: #fff;
+	font-size: 1.2em;
+	line-height: 6em;
+	cursor: pointer;
+	box-shadow: 
+		1px 1px 2px rgba(255,255,255,0.3) inset,
+		-1px -1px 1px rgba(0,0,0,0.5) inset,
+		1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.stop {
+	border: 10px solid #9c1129;
+	background-color: #e3193b;
+}
+	
+.start {
+	border: 10px solid #297E49;
+	background-color: #2cb05d;
+}
+
+
+
+

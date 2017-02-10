@@ -1,0 +1,37 @@
+body {
+	background-color: #000;
+}
+
+.circle {
+	background-color: #ddd;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	border: 1px solid black;
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.container {
+	width: 810px;
+	height: 610px;
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: absolute;
+}
+
+/*** Animation ***/
+
+.pounce {
+	animation-name: pounce;
+	animation-duration: 0.5s;
+}
+
+@keyframes pounce {
+	0% {margin-top: 5px; background-color: #ddd;}
+	50% {margin-top: -5px; background-color: #9611aa;}
+	100% {margin-top: 5px; background-color: #ddd;}
+}

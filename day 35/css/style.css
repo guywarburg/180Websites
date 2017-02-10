@@ -1,0 +1,53 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: #000;
+}
+
+.btn {
+	box-shadow: none;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	outline: none;
+}
+
+.btn0 {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	font-size: 1.2em;
+	line-height: 5em;
+	cursor: pointer;
+	box-shadow: 
+		1px 1px 2px rgba(255,255,255,0.3) inset,
+		-1px -1px 1px rgba(0,0,0,0.5) inset,
+		1px 1px 3px rgba(0,0,0,0.5);
+	border: 10px solid #297E49;
+	background-color: #2cb05d;
+}
+
+.btn1 {
+	width: 150px;
+	height: 75px;
+	border-radius: 5px;
+	background-color: grey;
+	color: #fff;
+	font-family: serif;
+	font-size: 1.5em;
+}
+
+.btn2 {
+	width: 150px;
+	height: 75px;
+	border-radius: 50%;
+	background-color: #f49e42;
+	color: #000;
+	font-family: sans-serif;
+	font-size: 1.5em;
+}

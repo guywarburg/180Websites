@@ -1,0 +1,186 @@
+body {
+	background-color: #00163a;
+}
+
+h2 {
+	font-family: Impact;
+	color: #23334c;
+	text-align: left;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.btn {
+	position: relative;
+	top: 550px;
+	margin: auto auto;
+	width: 350px;
+	height: 33px;
+}
+
+button {
+	color: #fff;
+	font-family: Helvetica;
+	background-color: #444b9b;
+	border: 1px solid #353b7c;
+	border-radius: 3px;
+	box-shadow: none;
+	height: 30px;
+	width: 100px;
+	font-size: 20px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #353b7c;
+}
+
+button:disabled {
+	color: #ccc;
+	background-color: #353b7c;
+	cursor: not-allowed;
+}
+
+.leftTri {
+	height: 0;
+	width: 0;
+	border-right: 5px solid #adb4ff;
+	border-bottom: 5px solid transparent;
+	border-top: 5px solid transparent;
+}
+
+.rightTri {
+	height: 0;
+	width: 0;
+	border-left: 5px solid #adb4ff;
+	border-bottom: 5px solid transparent;
+	border-top: 5px solid transparent;
+}
+
+.topTri {
+	height: 0;
+	width: 0;
+	border-bottom: 5px solid #adb4ff;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+
+.bottomTri {
+	height: 0;
+	width: 0;
+	border-top: 5px solid #adb4ff;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+
+.horizontal {
+	height: 100%;
+	width: 80%;
+	box-shadow: 0 0 10px 0 #ccd0f9;
+	background-color: #adb4ff;
+}
+
+.vertical {
+	height: 80%;
+	width: 100%;
+	box-shadow: 0 0 10px 0 #ccd0f9;
+	background-color: #adb4ff;
+}
+
+.line {
+	position: relative;
+	float: left;
+}
+
+.containerH {
+	height: 10px;
+	width: 100px;
+	position: relative;
+}
+
+.containerV {
+	height: 100px;
+	width: 10px;
+	position: relative;
+	display: inline-block;
+}
+
+/*** Digit Positioning ***/
+.digit {
+	position: absolute;
+	top: 200px;
+}
+
+.hourDec {
+	left: 300px;
+}
+
+.hourUnit {
+	left: 420px;
+}
+
+.minDec {
+	left: 590px;
+}
+
+.minUnit {
+	left: 720px;
+}
+
+.secDec {
+	left: 900px;
+}
+
+.secUnit {
+	left: 1020px;
+}
+
+/** inner digit positioning **/
+
+.top {
+	margin-left: 5px;
+}
+
+.left {
+	margin-left: -2px;
+	margin-top: -2px;
+}
+
+.right {
+	margin-top: -2px;
+    margin-left: 80px;
+}
+
+.middle {
+	margin-left: 5px;
+	margin-top: -18px;
+}
+
+.bottom {
+	margin-left: 5px;
+	margin-top: -18px;
+}
+
+/*** Colon ***/
+.colon1 {
+	position: absolute;
+	top: 250px;
+	left: 550px;
+}
+
+.colon2 {
+	position: absolute;
+	top: 250px;
+	left: 850px;
+}
+
+.circle {
+	border-radius: 90px;
+	background-color: #adb4ff;
+	height: 15px;
+	width: 15px;
+	position: relative;
+	margin-top: 30px;
+	box-shadow: 0 0 10px 0 #ccd0f9;
+}

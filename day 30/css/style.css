@@ -1,0 +1,232 @@
+body {
+	background-color: #f4b342;
+}
+
+.fishContainer {
+	margin-top: 150px;
+	margin-left: 100px;
+}
+
+.fish {
+	height: 25px;
+    width: 80px;
+    border-radius: 25px / 13px;
+    background-color: #7697d3;
+}
+
+.fish::before, .fish:before {
+	content: '';
+    border-left: 14px solid #7697d3;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: relative;
+    left: -10px;
+    top: 3px;
+    height: 0;
+    width: 0;
+}
+
+.fish::after, .fish:after {
+	content: '';
+    background-color: #000;
+    position: relative;
+    left: 47px;
+    top: -3px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 200;
+}
+
+.catContainer {
+    height: 350px;
+    width: 350px;
+    margin: 150px auto;
+}
+
+.head {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #5d6066;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.head::before, .head:before {
+	content: '';
+    border-bottom: 50px solid #5d6066;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: relative;
+    left: -8px;
+    top: -14px;
+    height: 0;
+    width: 0;
+    display: inline-block;
+    transform: rotate(-25deg);
+}
+
+.head::after, .head:after {
+	content: '';
+    border-bottom: 50px solid #5d6066;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: relative;
+    left: 97px;
+    top: -172px;
+    height: 0;
+    width: 0;
+    display: inline-block;
+    transform: rotate(25deg);
+}
+
+.eyes {
+	z-index: 101;
+	position: relative;
+	margin-top: -10px;
+	height: 50px;
+	width: 140px;
+}
+
+.leftEye {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: inline-block;
+	margin-left: 10px;
+	position: absolute;
+}
+
+.rightEye {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: inline-block;
+	margin-left: 82px;
+	position: absolute;
+}
+
+.pupil {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-color: #000;
+	display: inline-block;
+	position: relative;
+	margin: 10px 10px;
+	z-index: 150;
+}
+
+.whiskers {
+	z-index: 101;
+	position: relative;
+	margin-top: -10px;
+	height: 50px;
+	width: 140px;
+}
+.leftWhiskers {
+	margin-left: 15px;
+}
+
+.topWhiskerL {
+	height: 2px;
+    width: 34px;
+    background-color: #000;
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+    top: 17px;
+    left: 14px;
+    position: relative;
+}
+
+.midWhiskerL {
+	height: 2px;
+    width: 34px;
+    background-color: #000;
+    position: relative;
+    top: 23px;
+    left: 13px;
+}
+
+.bottomWhiskerL {
+	height: 2px;
+    width: 34px;
+    background-color: #000;
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    position: relative;
+    left: 14px;
+    top: 29px;
+}
+
+.topWhiskerR {
+	height: 2px;
+    width: 34px;
+    background-color: #000;
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    top: 0px;
+    left: 83px;
+    position: relative;
+}
+
+.midWhiskerR {
+	height: 2px;
+    width: 34px;
+    background-color: #000;
+    position: relative;
+    top: 6px;
+    left: 84px;
+}
+
+.bottomWhiskerR {
+	height: 2px;
+    width: 34px;
+    background-color: #000;
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+    position: relative;
+    left: 83px;
+    top: 12px;
+}
+
+.nose {
+	height: 10px;
+	width: 15px;
+	border-radius: 10px / 5px;
+	background-color: #f2a7c3;
+	position: relative;
+	top: 14px;
+	left: 66px;
+}
+
+.mouth {
+	height: 20px;
+    width: 30px;
+    border-radius: 10px / 5px;
+    border-bottom: 1px solid black;
+    position: relative;
+    top: -21px;
+    left: 58px;
+}
+
+/*** Animations ***/
+
+.blink {
+	animation: blink 1s;
+}
+
+@keyframes blink {
+	0% {height: 30px; top: 0;}
+	50% {height: 3px; top: 15px;}
+	100% {height: 30px; top: 0;}
+}

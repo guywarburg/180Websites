@@ -1,0 +1,39 @@
+body {
+	background-color: #e2e8be;
+}
+
+h1 {
+	text-align: center;
+	font-family: Gothic;
+}
+
+#message {
+	margin-top: 100px;
+}
+
+.formText {
+	width: 450px;
+	height: 35px;
+	margin-left: 450px;
+	margin-top: 50px;
+	border-radius: 5px;
+	box-shadow: none;
+	border: 1px solid rgba(0,0,0,0.3);
+	outline: none;
+	padding: 2px 5px;
+;
+}
+
+.formSubmit {
+	height: 35px;
+	width: 75px;
+	margin-left: 25px;
+	margin-top: 50px;
+	border-radius: 5px;
+	border: #000 1px solid;
+	outline: none;
+}
+
+.formText:focus {
+		border: #cb8ee2 1px solid;
+}

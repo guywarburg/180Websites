@@ -1,0 +1,119 @@
+body {
+	background-color: #9096a0;
+}
+
+h1 {
+	font-size: 2em;
+	font-family: Impact;
+	font-weight: bolder;
+	color: #696d72;
+	text-shadow: 1px 1px 3px #ccc;
+}
+
+.container {
+	position: relative;
+	height: 500px;
+	width: 500px;
+	margin: 50px auto;
+}
+
+.ball {
+	height: 500px;
+	width: 500px;
+	border-radius: 50%;
+	background-color: #000;
+	background: -webkit-radial-gradient(left top, #454647, #000); /* For Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(bottom right, #454647, #000); /* For Opera 11.1 to 12.0 */
+	background: -moz-radial-gradient(bottom right, #454647, #000); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(to bottom right, #454647, #000); /* Standard syntax */
+
+}
+
+.eight {
+	height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 20px solid black;
+    background-color: #fff;
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    z-index: 105;
+}
+
+.textInitial {
+	text-align: center;
+	font-size: 10em;
+    position: absolute;
+    top: 150px;
+    left: 206px;
+    z-index: 108;
+}
+
+.textAnswer {
+	width: 150px;
+	text-align: center;
+	font-size: 1.5em;
+	margin: 50px auto;
+	color: #fff;
+	z-index: 109;
+}
+
+.viewport {
+	position: absolute;
+	top: 130px;
+	left: 130px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    z-index: 110;
+    border: 20px solid black;
+    background-color: #0f223f;
+    background: -webkit-radial-gradient(transparent 30%, #0f223f); /* For Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(transparent 30%, #0f223f); /* For Opera 11.1 to 12.0 */
+	background: -moz-radial-gradient(transparent 30%, #0f223f); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(transparent 30%, #0f223f); /* Standard syntax */
+}
+
+.triangle {
+	position: absolute;
+    text-align: center;
+    top: 196px;
+    left: 144px;
+    width: 0;
+    height: 0;
+    border-top: 171px solid #033c99;
+    border-left: 107px solid transparent;
+    border-right: 107px solid transparent;
+    z-index: 107;
+    display: none;
+}
+
+form {
+	display: inline-block;
+	margin-top: 50px;
+	width: 500px;
+
+}
+
+.question {
+	width: 300px;
+	padding: 5px;
+	margin-left: 75px;
+	border: none;
+	border-radius: 3px 0 0 3px;
+	height: 26px;
+}
+
+button {
+	width: 75px;
+	height: 36px;
+	margin-left: -4px;
+	border: none;
+	box-shadow: none;
+	background-color: #2d62b7;
+	border-radius: 0 3px 3px 0;
+	font-size: 1.3em;
+	color: #fff;
+}
+
