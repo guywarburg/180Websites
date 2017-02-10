@@ -1,0 +1,11 @@
+body {
+	background-color: #000;
+}
+
+.circle {
+	border-radius: 90px;
+	border: 1px solid #292929;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}

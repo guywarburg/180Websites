@@ -1,0 +1,30 @@
+body {
+	background-color: #fff;
+	cursor: pointer;
+}
+
+h1 {
+	margin-top: 100px;
+	font-size: 1.3em;
+	color: #9d9ea0;
+	font-family: serif;
+	text-align: center;
+	text-shadow: 0 1px 1px #c7c8c9;
+}
+
+.image {
+	height: 60px;
+	width: 60px;
+	margin: 50px auto;
+	background-image: url("../images/6.gif");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display: none;
+}
+
+img {
+	position: absolute;
+	height: 60px;
+	width: 60px;
+}
