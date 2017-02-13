@@ -1,0 +1,134 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}
+
+/* Stats */
+.statsContainer {
+	height: 75px;
+	width: 60%;
+	margin: 50px auto 0 auto;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* Dude */
+.dudeContainer {
+	height: 300px;
+	width: 60%;
+	margin: 50px auto 0 auto;
+}
+
+.eyes{
+	position: relative;
+	top: 20px;
+	width: 75px;
+	height: 50px;
+	margin: 10px auto 0 auto;
+}
+
+.eye {
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 3px solid black;
+	display: inline-block;
+}
+
+.smile {
+	width: 100px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.happy {
+	border-bottom: 2px solid black;
+	margin: 30px auto 0 auto;
+}
+
+.sad {
+	border-top: 2px solid black;
+	margin: 30px auto 0 auto;
+}
+
+.head {
+	height: 150px;
+	width: 180px;
+	border-radius: 50%;
+	border: 3px solid black;
+	margin: 0 auto;
+	border-top: none;
+}
+
+.leftEye {
+	top: 20px;
+	border-left: 1px;
+}
+
+.rightEye {
+	top: 20px;
+	margin-left: 60px;
+	border-left: 1px;
+}
+
+.arm {
+	width: 80px;
+	height: 2px;
+	background-color: #000;
+	position: relative;
+}
+
+.leftArm {
+	top: -54px;
+    left: -79px;
+    transform: rotate(10deg)
+}
+
+.rightArm {
+	top: -61px;
+    left: 180px;
+    transform: rotate(-21deg)
+}
+
+.leftLeg {
+	top: 60px;
+    left: -13px;
+    transform: rotate(-53deg);
+}
+
+.rightLeg {
+	top: 58px;
+    left: 113px;
+    transform: rotate(62deg);
+}
+
+/* Buttons */
+
+.btnContainer {
+	height: 75px;
+	width: 75%;
+	margin: 50px auto 0 auto;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+button {
+	display: inline-block;
+	border: none;
+	box-shadow: none;
+	background-color: #4286f4;
+	margin-left: 30px;
+	height: 50px;
+	width: 215px;
+	font-size: 1em;
+}
+
+button:hover {
+	background-color: #2576f9;
+}
+
