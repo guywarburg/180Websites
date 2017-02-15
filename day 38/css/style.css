@@ -1,0 +1,92 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: #b2b9c4;
+	font-family: Courier;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: bold;
+	margin-top: 150px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 60px;
+	height: 50px;
+	width: 100%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: #9b9fa5;
+	font-size: 1.4em;
+	letter-spacing: 4px;
+}
+
+.footer p {
+	line-height: 2em;
+}
+
+.container {
+	width: 60%;
+	margin: 0 auto;
+	height: 617px;
+}
+
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	background-color: #b2b9c4;
+}
+
+.modal p {
+	margin-top: 30px;
+	font-size: 1.5em;
+}
+
+.letter {
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	font-size: 2em;
+	position: absolute;
+}
+
+.drop3 {
+	animation-name: drop;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+}
+.drop4 {
+	animation-name: drop;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+}
+.drop5 {
+	animation-name: drop;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+}
+.drop6 {
+	animation-name: drop;
+	animation-duration: 6s;
+	animation-timing-function: linear;
+}
+.drop7 {
+	animation-name: drop;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+}
+
+@keyframes drop {
+	0% {top: 0;}
+	100% {top: 630px;}
+}
