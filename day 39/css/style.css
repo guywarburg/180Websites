@@ -1,0 +1,86 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: #000;
+}
+
+.headerContainer {
+	width: 49%;
+	height: 60px;
+	margin-top: 30px;
+	float: left;
+}
+
+h1 {
+	color: #67FF0F;
+	font-family: Courier;
+	margin-left: 30px;
+	display: inline-block;
+}
+
+.btnContainer {
+	width: 49%;
+	height: 60px;
+	margin-top: 30px;
+	float: right;
+}
+
+input, label, button {
+	display: inline-block;
+}
+
+label {
+	color: #67FF0F;
+	font-family: Courier;
+	font-size: 1.2em;
+}
+
+input {
+	margin-right: 15px;
+	width: 60px;
+	height: 30px;
+	border: none;
+}
+
+#color {
+	position: relative;
+    top: 4px;
+}
+
+button {
+	box-shadow: none;
+	border-radius: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	font-size: 1em;
+}
+
+.eraser {
+	background-color: #8F4ABD;
+}
+
+.eraser:hover {
+	background-color: #A254D6;
+}
+
+.clearCanvas {
+	margin-left: 15px;
+	background-color: #D6184A;
+}
+
+.clearCanvas:hover {
+	background-color: #F21B54;
+}
+
+#myCanvas {
+	display: block;
+	background-color: #fff;
+	margin: 0 auto;
+	cursor: crosshair;
+}
