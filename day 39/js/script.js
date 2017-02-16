@@ -9,11 +9,6 @@ $(document).ready(function(){
 	var color = "#000";
 	var size = 10;
 
-	var offset = canvas.getBoundingClientRect();
-	var offsetTop = offset.top;
-	var offsetLeft = offset.left;
-
-
 	function setAttributes(el, attrs) {
   		for(var key in attrs) {
 			el.setAttribute(key, attrs[key]);
@@ -24,6 +19,10 @@ $(document).ready(function(){
 	//Initialize canvas size
 	setAttributes(canvas, {"height":height-100, "width":width*0.9});
 
+	// Calculate offsets after canvas size is set.
+	var offset = canvas.getBoundingClientRect();
+	var offsetTop = offset.top;
+	var offsetLeft = offset.left;
 
 	//Drawing functionalities
 	function draw(posX, posY) {
