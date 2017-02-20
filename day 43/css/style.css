@@ -1,0 +1,76 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: #303030;
+	color: #eee;
+	text-align: center;
+}
+
+#modal {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+ 	z-index: 1;
+ 	background-color: #303030;
+}
+
+#modal h1 {
+	margin-top: 10%;
+}
+
+#modal p {
+	margin-top: 2%;
+}
+
+#modal button {
+	border-radius: none;
+	box-shadow: none;
+	border: 1px solid #000;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	padding: 5px 10px;
+	font-size: 16px;
+	margin-top: 2%;
+	cursor: pointer;
+}
+
+.txt-container {
+	width: 50%;
+	margin: 7% auto 0 auto;
+	font-size: 22px;
+}
+
+.txt-container p {
+	margin-top: 10px;
+}
+
+#myCanvas {
+	margin:3% auto 0 auto;
+	border: 1px solid #109620;
+}
+
+#btn-container {
+	margin: 1% auto 0 auto;
+	height: 200px;
+	width: 50%;
+}
+
+#btn-container:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.btn {
+	width: 6%;
+	padding: 1%;
+	margin: 1%;
+	float: left;
+	background-color: #eee;
+	color: #000;
+	cursor: pointer;
+}
