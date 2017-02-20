@@ -1,0 +1,41 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: #538f99;
+}
+
+.handle-container {
+	width: 100%;
+	margin-top: 10%;
+}
+
+.handle-container:after{
+	display: block;
+	content: "";
+	clear:both;
+}
+
+.handle-container img {
+	float: left;
+	margin-left: 10%;
+}
+
+.messages {
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5%;
+	position: relative;
+}
+
+.card {
+	border: 1px solid #000;
+	background-color: #fff;
+	box-shadow: 1px 1px 3px #000;
+	display: inline-block;
+	padding: 5px 10px;
+	margin-left: 10%;
+	cursor: pointer;
+}
