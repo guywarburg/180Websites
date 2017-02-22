@@ -1,0 +1,126 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 800%;
+    background-color: #666;
+    overflow-x: hidden;
+    min-width: 66px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 34px;
+    width: 100%;
+    background-color: #292929;
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 25px;
+    color: #68cc98;
+}
+
+section {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -330px;
+    width: 660px;
+    height: 302px;
+    text-align: center;
+}
+
+#randColor, #userColor {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+div + div {
+    margin-left: 50px;
+}
+
+#textcontainer {
+    display: none;
+    margin-top: 50px;
+    color: #eee;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+#resultHeader {
+    font-weight: bold;
+    font-size: 22px;
+    color: #68cc98;
+    margin-bottom: 10px;
+}
+
+#help {
+    border: none;
+    border-radius: 0 5px 0 0;
+    background-color: #292929;
+    color: #68cc98;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#help:hover{
+    background-color: #000;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #292929;
+    z-index: 1;
+    text-align: center;
+    color: #eee;
+    padding: 50px;
+}
+
+#modal h2 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#modal h3 {
+    font-size: 25px;
+    color: #68cc98;
+    margin-top: 20px;
+}
+
+#modal p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#modal .close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #eee;
+    border: none;
+    border-radius: 0 5px 0 0;
+    background-color: #292929;
+}
+
+#modal .close:hover {
+    color: #ccc;
+}
