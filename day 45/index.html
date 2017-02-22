@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/removeDefaults.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>180 Websites | Day 45</title>
+</head>
+<body>
+	<header role="banner">
+		<h1 class="myHeader">Color Test</h1>
+	</header>
+	<main>
+		<div id="modal">
+			<button class="close">x</button>
+			<h2>Your mission is to make the box on the right<br/>
+				the exact same color as the box on the left</h2>
+			<h3>Inside the box on the right:</h3>
+			<p>Move your mouse left or right to adjust luminosity.</p>
+			<p>Move your mouse up or down to adjust saturation.</p>
+			<p>scroll your mouse up and down to adjust hue.</p>
+			<br/>
+			<p>Click to submit.</p>
+		</div>
+		<section>
+			<div id="randColor"></div>
+			<div id="userColor"></div>
+			<div id="textcontainer">
+				<h3 id="resultHeader"></h3>
+				<p>Hue: <span id="hue"></span></p>
+				<p>Saturation: <span id="sat"></span></p>
+				<p>Luminosity: <span id="lum"></span></p>
+			</div>
+		</section>
+	</main>
+	<footer role="contertinfo">
+		<button id="help">?</button>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

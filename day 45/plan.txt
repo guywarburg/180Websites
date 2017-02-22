@@ -1,0 +1,41 @@
+Target:
+
+Create a color test -
+One square displays a random color. The other changes color by moving the mouse over it and scrolling - 
+up and down affect the brightness, right and left affect the hue and scrolling the saturation.
+
+Issues:
+I’m not sure how to control the scrolling
+Don’t know enough about color definition - both for controlling the hue, brightness and saturation and for calculating the mistake rate.
+
+Pseudo Code:
+ 
+html -
+    two divs in a container, button at the bottom left corner for explanation and a header at the top left corner.
+
+css -
+    nothing special, can try the .div + .div selector to create a margin between the two divs.
+
+js -
+    show modal on button click.
+    on mousemove -
+        translate e.pageX to hue
+        translate e.pageY to saturation
+    on scroll (learn how this works)
+        translate location to color
+    on click
+        calculate difference between colors and display.
+
+Progress:
+didn’t clock beginning.
+12:20 - layout complete.
+14:00 - finished main JS functionality, need to add modal view and feedback text.
+16:00 - completely finished!! took way too long to setup and organize modal (especially the victory text).
+
+Question:
+    first design i used getSat, getLum then I made them into one function - not sure what’s better.
+
+Lessons:
+    childNode includes textNodes which makes it harder to manipulate, use children but check browser compatibility.
+    Finally understood what hue, saturation and luminosity is.
+    I think I improved with my commenting and function building, though everything is global at the moment.
