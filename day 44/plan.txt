@@ -1,0 +1,26 @@
+Mission:
+Analog Clock
+build a analog clock using a canvas element.
+
+
+Regarding html and css we simply have a centered canvas element - this part is a no brainer.
+
+JS:
+
+- on load we will create a time object and create 3 global variables sec, min, hour.
+
+- Basic layout: we have three circles, I think to try and build each with a separate object representing each. Each will have the required variables to draw the circle and two methods: .draw() and .update(). draw displays the basic layout and update moves the current time.
+
+- update time: set an interval that updates all 3 circles every second.
+
+Issues:
+how to create a dotted circle.
+how to calculate the relative place of the current time in radians.
+*maybe separate the current time from the layout.
+
+Progress:
+1 hour - finished basic layout. The dots certainly were a bit tricky. Didn’t find any ready-made 
+not sure how long it took - completed the website. I need to refactor a few of the functions, add a few constants as it became hell and add dynamic color change.
+
+Lessons:
+Radians and trigonometry (at least the basics) aren’t as scary as I remembered.
