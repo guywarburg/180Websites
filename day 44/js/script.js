@@ -1,6 +1,12 @@
+// TODO - add constants for center location and circle sizes.
+//      - add constants for time standards (SEC = 60) etc.
+
+
 // canvas size
 var w = 500;
 var h = 500;
+var baseColor = '#A8A7B0';
+var indicatorsColor = '#28ca9c';
 
 window.onload = function(){
 
@@ -33,7 +39,7 @@ window.onload = function(){
             if(drawNumbers){
                 drawText(x, y, radius, startAngle, num);
             } else{
-                drawCircle(x, y, radius, startAngle, 1);
+                drawCircle(x, y, radius, startAngle, 1, baseColor);
             }
             
             startAngle += interval;
@@ -43,11 +49,11 @@ window.onload = function(){
         }
         
     }
-    function drawCircle(centerX, centerY, radius, angle, size){
+    function drawCircle(centerX, centerY, radius, angle, size, color){
         var x = centerX + radius * Math.cos(angle);
         var y = centerY + radius * Math.sin(angle);
         
-		ctx.fillStyle = "#fff";
+		ctx.fillStyle = color;
         ctx.beginPath();
         ctx.arc(x, y, size, 0, Math.PI * 2, false);
         ctx.fill();
@@ -56,12 +62,10 @@ window.onload = function(){
     function drawText(centerX, centerY, radius, angle, text){
         var x = centerX + radius * Math.cos(angle);
         var y = centerY + radius * Math.sin(angle);
-        //Add offset to center text
-        x -= 5;
-        y += 7;
-        //TODO add dynamically via lineheight 
 
 		ctx.font = "20px serif";
+        ctx.textBaseline = 'middle';
+        ctx.textAlign = 'center'
 		ctx.fillStyle = "#fff";
 		ctx.fillText(text, x, y);
     }
@@ -75,53 +79,46 @@ window.onload = function(){
 /*** Time ***/
 
 setInterval(function(){
-    // reset
+    var currTime = new Date(); 
+    var sec = currTime.getSeconds();
+    var min = currTime.getMinutes();
+    var hour = currTime.getHours();
+    // reset canvas
     ctx.fillStyle = "#000";
     ctx.rect(0,0,w,h);
     ctx.fill();
 
     drawCompleteLayout();
-    drawSec();
-    drawMin();
-    drawHour();
+    drawSec(sec);
+    drawMin(sec, min);
+    drawHour(sec, min, hour);
 }, 1000);
 
-    function drawSec(){
-        var currTime = new Date(); 
-        var sec = currTime.getSeconds();
+    function drawSec(sec){
         var angle = Math.PI * 2 / 60 * sec;
         // fix angle to start at hour 12
         angle = (angle < 0.5 * Math.PI) ?(angle + (1.5 * Math.PI )) : (angle - (0.5 * Math.PI));
         
-        drawCircle(250, 250, 100, angle, 5);
+        drawCircle(250, 250, 100, angle, 5, indicatorsColor);
     }
 
-    function drawMin() {
-        var currTime = new Date(); 
-        var sec = currTime.getSeconds();
-        var min = currTime.getMinutes();
+    function drawMin(sec, min) {
         var angle = Math.PI * 2 / 60 * min;
-        angle += Math.PI * 2 / 60 * (sec / 60);
+        angle += Math.PI * 2 / 60 * (sec / 60); // add seconds offset
         // fix angle to start at hour 12
         angle = (angle < 0.5 * Math.PI) ?(angle + (1.5 * Math.PI )) : (angle - (0.5 * Math.PI));
         //min
-        drawCircle(250, 250, 150, angle, 8);
+        drawCircle(250, 250, 150, angle, 10, indicatorsColor);
     }
 
-    function drawHour(){
-        var currTime = new Date(); 
-        var sec = currTime.getSeconds();
-        var min = currTime.getMinutes();
-        var hour = currTime.getHours();
-        var angle = Math.PI * 2 / 12 * hour;
-        
-        //angle += Math.PI * 2 / 12 * (sec / 60);
-        angle += (Math.PI * 2 / 12) * (min / 60);
+    function drawHour(sec, min, hour){
+        var angle = Math.PI * 2 / 12 * hour; 
+        angle += (Math.PI * 2 / 12) * (min / 60); // add minutes offset
 
         // fix angle to start at hour 12
         angle = (angle < 0.5 * Math.PI) ?(angle + (1.5 * Math.PI )) : (angle - (0.5 * Math.PI));
         
-        drawCircle(250, 250, 225, angle, 10);
+        drawCircle(250, 250, 225, angle, 20, indicatorsColor);
     }
 
 };
