@@ -1,0 +1,50 @@
+Start plan - 11:45
+
+Today’s mission - build a simple snake game in a HTML canvas.
+phase one - exact copy - hit a wall and lose, each level has as many spots as the level and you level up only when you ‘eat’ all spots.
+
+html:
+canvas in center of screen and display of level underneath.
+modal view for ‘game-over’.
+I’ll skip the instructions screen.
+
+css:
+quite basic.
+
+JS:
+Thought to implement the snake as a linked-list - that way when I want to move it I simply remove one node and add another at the other end.
+
+so We’ll have snakeNodes object:
+variables: next(node), prev (node), x (start location), y (start location), move direction (up, down, left or right).
+methods: createNode, removeNode, move (create a new node, and remove the last node), increment (create new node without removing a node)
+
+We will also have a food object:
+variables: x,y - position and visible boolean.
+
+all food will be stored in an array which will be cleared on levelUp.
+
+other variables:
+canvas height and width.
+size (will apply to both for and snakeNodes)
+
+I guess that’s it 😃
+
+start code: 12:25 - next test point at 13:00
+
+13:00 - layout in place. started working on js layout (variables and objects). next check-in - 13:45.
+
+13:45 - Finished basic object - debugging before I get into game functionality (which I realized I didn’t define.
+Also - separated the Snake object from the SnakeNode. Snake has functionality and Node has basic variables.
+Want to test all function and start implementing game play by 14:30.
+
+Due to unforced events (my parents showed up at 14:30 - resumed work at around 16:00) I just Finished!! 17:20
+
+Pretty messy code - need to review and make more pretty.
+Also found a few minor bug - Food might show up on snake.
+
+Total time - 5.5 hours.
+
+TODO -
+1. fix bug
+2. refactor
+3. move to phase 2.
