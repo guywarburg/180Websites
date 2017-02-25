@@ -1,0 +1,77 @@
+Day 47 - Pong
+
+start plan - 13:25
+Listening to Foo Fighters by Foo Fighters (wanted to hear their albums, not their shows or collections)
+
+Mission -
+Build simple pong game. small canvas rectangle, each side has a ‘paddle’ (small line that can reflect the ball).
+A ball bounces around the screen, can be deflected by top and bottom walls and paddles. If ball exits the sides the player that missed the ball loses the round.
+
+
+HTML:
+nothing fancy - a canvas in the middle of the screen (for simplicity I’ll give it a fixed size).
+A score board, text strings that will be modified at the end of each round.
+Text modal that appears at the beginning - displays how to play.
+Text modal that appears at the end - displays winner. 
+
+Css:
+nothing special.
+
+JavaScript:
+constant size will define the size of all elements in the canvas (default block sizes).
+two main objects - Paddle and Ball.
+
+Paddle - has a size and location and id (currently just 1 or 2) and color. 
+has methods:
+    move - moves the paddle up and down.
+    getLocation - returns true if the paddle is in a given certain location.
+    draw - draws the paddle.
+
+Ball - 
+variable:
+    location x and y
+    direction dx and dy (try to give random value).
+methods:
+    move - moves the ball according to dx and dy. method will test and modify dx and dy.
+    draw
+
+game-play:
+interval:
+    move ball
+    draw paddle
+    draw ball
+    testLoss - returns false if game is in play, userID of loser player if game is over.
+
+eventListener - onkeyup - test which player and call move accordingly.
+
+gameOver - update and display Modal.
+
+gameStart - triggered onClick on first modal. declares necessary elements, draws initial canvas and sets the interval.
+
+
+build order:
+1. build layout (html and css)
+2. build ball and test movement in canvas (deflected by all walls) - decide if random or fixed direction is better.
+3. build and test one paddle
+4. add second paddle
+5. test a game
+6. add gameOver
+7. add intro screen.
+
+start coding - 13:45
+
+1. 14:00 - finished layout, didn’t code the modals at all. [Foo Fighters by Foo Fighters still playing]
+2. 14:15 - finished ball object. works fine and i like the random direction feature. [Just realized that the music stopped, moving to The Colour and the Shape]
+3. 14:30 - finished paddle object. works fine. need to improve build flow - added step 3.5 - add functionality of possible loss to ball.
+4. 14:30 - 18:30 break
+5. 18:55 - managed to get required functionality but not happy with it.
+6. 19:25 - improved the testPaddle functionality and tested a game with two paddles. works but still not perfect.
+7. forgot to add scoring - will solve now. this includes resetting the game.
+
+Finished - 20:40!!
+total coding - 3 hours 15 min.
+
+Managed to get the testPaddle right - currently functions as textBall (part of the paddle object). It’s not the most elegant but it works - it has ugly repetition, but…
+
+Skipped the intro page and the game over as I eventually decided to let the game go on forever. But the each round displays a winner and updates the score board.
+Was fun :)
