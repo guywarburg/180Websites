@@ -1,0 +1,36 @@
+Day 48 - Static
+
+Start plan - 14:05
+
+Create a canvas element that displays white noise.
+
+html:
+basic canvas centered in the middle of the screen
+
+css:
+center the canvas container.
+
+js:
+run a nested loop to go through all pixels in the canvas.
+for each run an interval that changes its color randomly every second.
+
+variables:
+height and width of the canvas.
+Array of requested colors.
+
+build order:
+1. layout.
+2. build and test the random color function
+3. try to loop through all pixels with function.
+
+Start coding - 14:15
+
+Finished to implement my idea but there were too many intervals and the program just ran too slow.
+Then I tried to alternate a bit but it was simply too slow so I googled a bit.
+
+15:25 - Finished a while ago by copying an example from Stack-Overflow:
+http://stackoverflow.com/questions/22003491/animating-canvas-to-look-like-tv-noise
+
+Spent most of the last hour reading about ImageData object and the 8-bit Clamped Array and the Uint32Array.
+Not sure I got it but I need to try and manipulate the Image data a bit to get it.
+Another new topic was the Animate Frame which I need to look into.
