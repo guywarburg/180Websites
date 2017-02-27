@@ -1,0 +1,75 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 0 auto;
+}
+
+form {
+    display: block;
+    width: 450px;
+    margin: 50% auto 0 auto;
+}
+
+#search_name {
+    padding: 10px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    height: 30px;
+    width: 230px;
+}
+
+#btn_submit {
+    box-shadow: none;
+    border: none;
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+    border-radius: 3px;
+    margin-left: 3px;
+    font-size: large;
+    background-color: #a343e0;
+    color: #f7f7f7;
+}
+
+#result {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid #999;
+    background-color: #fff;
+    margin: 20% auto;
+    display: none
+}
+
+#temperature {
+    margin-top: 65px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#weather {
+    margin-top: 10px;
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+
+/* Animations */
+
+.toTop {
+    animation-name: to_top;
+    animation-duration: 1s;
+}
+
+@keyframes to_top {
+    0% {margin-top: 50%;}
+    100% {margin-top: 50px;}
+}

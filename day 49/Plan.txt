@@ -1,0 +1,41 @@
+Day 49 - Weather Report
+
+Plan start - 10:15
+
+Mission:
+Build a simple app that provides the temperature of any location via API.
+Small form + out display. The background color is defined by the temperature.
+
+HTML:
+Basic inline form.
+div to display the results with two inner text placeholders
+
+CSS:
+fix form styling.
+Style the response div - large circle with wide border.
+Animation toTop - moves the form to the top of the page.
+
+JS:
+form on submit - call API and display results.
+color converter.
+
+plan:
+1. layout
+2. css animation
+3. study api
+4. build api into code.
+5. color converter.
+
+start coding - 10:20
+
+Finished layout and animation - 10:55
+Tried to use css animation - worked fine but jumped back to original location. Decided to use js instead.
+11:30 - took a break, resumed 13:40
+14:45 - Finished website!
+
+Api was easier than I thought.
+Regarding the random color converter, I didn’t really want it random, I wanted it to convey the temperature. I simply made a long if statement for several different colors. In order to keep a good looking scheme I kept the same luminosity and saturation - cool tip I learned while making another website :).
+
+Total coding: 2 hours.
+
+
