@@ -1,34 +1,41 @@
+// Canvas variables
 var c = document.getElementById('myCanvas');
 var ctx = c.getContext("2d");       // context without alpha channel.
 var idata = ctx.createImageData(c.width, c.height); // create image data
+var size = 10;
 
+// Canvas Array representation
 var board = [];
 var next = []
-for(var i = 0; i < c.width; i++){
+for(var i = 0; i < c.width / size; i++){
     board[i] = [];
     next[i] = [];
 }
 
+// Init random screen
 function init(){
-    for(var i = 0; i < c.width; i++){
-        for(var j = 0; j < c.height; j++){
+    for(var i = 0; i < c.width / size; i++){
+        for(var j = 0; j < c.height / size; j++){
             board[i][j] = Math.random() < 0.5 ? 0 : 1;
-            colorPixel(i, j, idata, board);
+            // colorPixel(i, j, idata, board);
+            newColorPixel(i, j, idata, board, size);
         }
     }
     ctx.putImageData(idata, 0, 0);
 }
 
+// color and place imagedata according to array representation.
 function colorDataImage(arr, ctx, idata){
     for(var i = 0; i < arr.length; i++){
         for(var j = 0; j < arr[i].length; j++){
-            colorPixel(i, j, idata, arr);
+            // colorPixel(i, j, idata, arr);
+            newColorPixel(i, j, idata, arr, size);
         }
     }
     ctx.putImageData(idata, 0, 0);
 }
 
-
+// Paint a pixel black or white according to representation
 function colorPixel(i, j, dataImage, arr) {
         tmp = ((dataImage.width * j) + i) * 4;
         var color;
@@ -43,9 +50,11 @@ function colorPixel(i, j, dataImage, arr) {
         dataImage.data[tmp + 3] = 255;
 }
 
+// Full Cellular Automata functionality
 function nextGen(ctx, idata) {
-    for(var x = 1; x < c.width-1; x++){
-        for(var y = 1; y < c.height-1; y++){
+    for(var x = 1; x < (c.width / size)-1; x++){
+        for(var y = 1; y < (c.height / size)-1; y++){
+            
             var neighbors = 0;
 
             for(var i = -1; i <= 1; i++){
@@ -94,53 +103,27 @@ setTimeout(function(){
 }, 1000);
 
 
-// function randomColor(){
-//     return Math.floor(Math.random() * 256);
-// }
+// Paint a pixel black or white according to representation
+function newColorPixel(i, j, dataImage, arr, size) {
+    var color;
+    if(arr[i][j] === 1){
+        color = 0;
+    } else {
+        color = 255;
+    }
+    var x = i * size;
+    var stopX = x + size;
 
-
-// function initCanvas(){
-//     for(var i = 0; i < idata.data.length; i += 4){
-//         var color = Math.random() < 0.5 ? 0 : 255;
-//         idata.data[i] = color;
-//         idata.data[i+1] = color; 
-//         idata.data[i+2] = color;
-//         idata.data[i+3] = 255;
-//     }
-//     ctx.putImageData(idata, 0, 0);
-// }
-
-// window.onload = function(){
-//     initCanvas();
-//     // colorCanvas();
-// }
-
-
-
-
-// const size = 10
-// function colorCanvas(){
-//     // var newDataImage = ctx.createImageData(c.width, c.height);
-//     for(var pixelX = 0; pixelX < c.width/size; pixelX += size){
-//         for(var pixelY = 0; pixelY < c.height/size; pixelY += size){
-//             setPixelColor(pixelX, pixelY);
-//         }
-//     }
-//     ctx.putImageData(idata, 0, 0);
-// }
-
-// function setPixelColor(x, y){
-//     var r = randomColor();
-//     var g = randomColor();
-//     var b = randomColor();
-//     for(var i = x; i < x + (size * 4); i += 4){
-//         for(var j = y; i < y + (size * 4); j += 4){
-//         // var color = Math.floor(Math.random() * 256); // < 0.5 ? 0 : 255;
-//         // console.log(color);
-//         idata.data[i + j] = r;
-//         idata.data[i + j + 1] = g; 
-//         idata.data[i + j + 2] = b;
-//         idata.data[i + j + 3] = 255;
-//         }
-//     }
-// }
+    for(x; x < stopX; x++){
+        var y = j * size;
+        var stopY = y + size;
+        for(y; y < stopY; y++){
+            tmp = ((dataImage.width * y) + x) * 4;
+            
+            dataImage.data[tmp] = color;
+            dataImage.data[tmp + 1] = color;
+            dataImage.data[tmp + 2] = color;
+            dataImage.data[tmp + 3] = 255;
+        }
+    }
+}
