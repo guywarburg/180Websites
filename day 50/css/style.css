@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background: #000;
+}
+
+.wrapper {
+    width: 704px;
+    height: 502px;
+    margin: 50px auto;
+}
