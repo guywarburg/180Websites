@@ -1,0 +1,49 @@
+Day 50 - Color Wars (Cellular Automata)
+
+Today’s websites deals with Cellular Automata. A new concept I just read about.
+Jenifer implements it with colors, I would like to start with the classic ‘game of life’ and see if I have time to proceed to changing it to color.
+
+Html:
+div wrapper and a canvas within.
+
+Css:
+center wrapper
+set bg color
+vertically move a bit the canvas.
+
+JS:
+create an infinite loop that calls the nextGen function.
+nextGen build a canvasImageData according to the rules and draws it once ready.
+
+- functions:
+    - init => draws random state. (called once)
+    - loop => for each generation - calls nextGen, puts returned ImageData, timeout and again.
+    - nextGen => creates a iterates each pixel in the current ImageData and creates a new image applying the rules, returning the new ImageData. (called each generation)
+    -rules => returns value of square according to given params. (run per pixel per gen).
+    - 
+    
+plan:
+1. layout
+2. build random basic grid.
+3. build rule and run once.
+4. add loop.
+
+Coding:
+18:05 - completed basic layout.
+// Didn’t update…
+20:40 - finished functional Cellular Automata were each cell is a pixel
+21:30 - changed each pixel to be of set ‘size’.
+// TODO - try to test actual algorithm, shapes seem wrong.
+    - delete and re-write with an object of ‘cell’ and an array of ‘cells’. 
+
+Next Day:
+12:30 - Start
+I decided not to refactor and re-write into OOP model. instead I wanted to simply de-bug.
+
+13:47 - fully working according to algorithm!!
+bugs in order:
+- as next[] wasn’t initiated for all locations the second round was already receiving NaN errors as it was trying to reach undefined values in next. >> added a board.slice to fully copy the array.
+- board[x][y] was being updated automatically when I was assigning values to next[x][y] - they were bound together although i used slice. >> the slice was affecting only the outer level (i.e. board[i] !== next[i], but the inner arrays were bound together), I added slicing per inner array at the end of the nextGen() to fully separate the two arrays.plan
+
+13:55 - finished commenting and organizing code.
+
