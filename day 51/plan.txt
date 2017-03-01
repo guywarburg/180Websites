@@ -1,0 +1,60 @@
+Day 51 - Memory Game
+
+Start plan - 14:00
+Today’s website is a simple memory game.
+build a grid of 30 cards. on click the card flips to display it’s content.
+on match score + 1 and cards remain revealed.
+
+game is over when all cards are revealed.
+
+Option - number on cards, mahjong ‘cards’ to confuse.
+
+HTML:
+    h1 title at top left.
+    game container
+        scoreboard container
+            h2 title
+            p - attempts span- num
+            p - matches span- num
+        cards container
+            div.card + id * 30
+
+CSS:
+locate h1.
+center game container.
+float cards (within the card container) to fill a board.
+
+JS:
+Card object:
+    id, value
+
+init() - creates necessary cards and places on board.
+onClick - reveal(card-id), match(card1, card2)
+match(card1, card2) - 
+    if both cards have the same value:
+        match +1
+    else
+        unravel cards
+    attempt + 1
+    if ( match === cards /2)
+        gameOver
+
+plan:
+1. build layout.
+2. build init and test - find a array shuffle method.
+3. add reveal - decide if each element is two divs or if reveal changes the bg-color and adds the value.
+4. add match
+5. add game over
+6. improve design
+    
+
+Start - 14:25
+
+1. Layout - in place - 14:40 - // TODO - add styling - currently elements in place.
+2. Build init - Init ready - 15:00 - Managed to build with only JS Vanilla.
+3. add reveal - reveal works - 15:20 - need to add style - didn’t randomize array order.
+4. PAUSE - 15:25 - 16:40
+5. Randomize array order - 16:45 - done. Used a simple Stack Overflow example.
+6. Add match() - 17:25 - finished program. Had to add a div cover to stop additional clicks.
+7. game over - 17:40 - displays modal, doesn’t reset game or display stats.
+8. Full game functionality - 18:20 // TODO - refactor and add some style.

@@ -1,0 +1,90 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background: #eee;
+}
+
+h1 {
+    color: #000;
+    margin: 10px;
+}
+
+.game-container {
+    height: 500px;
+    width: 700px;
+    margin: 50px auto 0 auto;
+}
+
+.scoreboard {
+    height: 500px;
+    width: 180px;
+    float: left;
+}
+
+#card-container {
+    height: 500px;
+    width: 500px;
+    float: left;
+}
+
+.card {
+    float: left;
+    border: 1px solid #bbb;
+    width: 70px;
+    height: 96px;
+    margin: 1px;
+    background: #6d6d6d;
+    cursor: pointer;
+}
+
+#cover {
+    display: none;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    z-index: 3;
+}
+
+#modal {
+    display: none;
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid #292929;
+    z-index: 5;
+}
+
+#modal h2 {
+    margin: 80px 0 0 0;
+}
+
+#modal h2 + h2 {
+    margin: 20px 0 0 0;
+}
+
+#modal button {
+    box-shadow: none;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    background: #292929;
+    border: 1px solid #292929;
+    margin-top: 50px;
+    height: 50px;
+    width: 120px;
+    font-size: 17px;
+}
+
+#modal button:hover {
+    color: #292929;
+    border: 1px solid #292929;
+    background: #fff;
+}
