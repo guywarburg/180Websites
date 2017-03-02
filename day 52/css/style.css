@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background: #eee;
+}
+
+h1 {
+    margin: 10px;
+}
+
+.container {
+    width: 603px;
+    height: 495px;
+    margin: 50px auto;background: url('../images/etch-a-sketch.png');
+    background-size: 603px 495px;
+}
+
+#myCanvas {
+    margin: 84px 86px;
+}
+
+.hide{
+    background: #eee;
+}
