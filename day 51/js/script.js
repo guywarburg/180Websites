@@ -1,5 +1,6 @@
 // Variables
-var cards = [];
+var cards = [],
+    flippedCards = [];
 var attempts = 0,
     matches = 0;
 
@@ -121,13 +122,9 @@ window.onload = function(){
 var match = function(id1, id2){
     incrementAttempt();
     if(cards[id1].value === cards[id2].value){
+        flippedCards.push(id1);
+        flippedCards.push(id2);
         incrementMatch();
-        // remove event listeners
-        
-        // TODO - refactor clickHandler => currently cannot remove event listener as it isn't a separate function.
-
-        // document.getElementById(id1).removeEventListener('click', clickHandler);
-        // document.getElementById(id2).removeEventListener('click', clickHandler);
         if(matches === cards.length / 2){
             endGame();
         }
@@ -135,12 +132,24 @@ var match = function(id1, id2){
     }
     return false;
 }
-function clickHandler(){};
+
+function cardAlreadyFlipped(idToTest){
+    for(var i = 0; i < flippedCards.length; i++){
+        if(flippedCards[i] === idToTest){
+            return true;
+        }
+    }
+    return false;
+}
+
 function addClickers(){
     var card1 = card2 = -1; // -1 => no cards picked
     var cardElements = document.getElementsByClassName('card')
     for(var i = 0; i < cardElements.length; i++){
-        cardElements[i].addEventListener('click', function clickHandler(){
+        cardElements[i].addEventListener('click', function(){
+            if(cardAlreadyFlipped(this.id)){
+                return;
+            }
             // reveal card
             reveal(this)
             // store card id
