@@ -1,0 +1,71 @@
+Day 52 - Etch-A-Sketch
+
+Start Plan - 13:55
+build a simple etch a sketch - see example here
+
+Let’s split into to phases
+phase 1 - functionality
+phase 2 - styling
+
+HTML:
+phase 1:
+    h1 title
+    div container
+        canvas
+        reset button
+
+phase 2 - add the background image to canvas and switch button with shake-to-reset
+
+CSS:
+phase 1:
+    basic layout and location
+phase 2:
+    add image
+
+JS:
+phase 1:
+global variables:
+    canvas, ctx, xLoc, yLoc
+functions:
+    eventlistener - keydown drawLine(direction)
+    on-button-click - erase canvas.
+    draw - continue line from xLoc and yLoc in given direction.
+
+phase 1.5:
+    try to make draw a closure with bloc and yLoc hidden.
+
+phase 2:
+    clearCanvas : change from onClick to onShake.
+
+Plan:
+1. html phase 1
+2. css phase 1
+3. js event listener on keydown
+4. bind function to canvas
+5. add button
+6. html and css phase 2
+7. js phase 2
+8. optional - js phase 1.5
+
+START - 14:05
+1. html - done - 14:10
+2. css - done - 14:13
+3. js - arrows bind works - 14:18
+4. draw function works - 14:25 - forgot to add button for erase. Cannot press two button at once.
+5. tested diagonal - for now I'll pass -  14:30
+6. 14:37 - Instead of adding a button I implemented the clearRect on the canvas itself - “canvas.onClick”...
+
+took a break and forgot to note when i started again.
+I think it took about half an hour to add the image,  learn and implement the drag-and-drop for the etch.
+
+Not working perfect as it drags the parent element without the child (the div without the canvas) so it doesn’t look great.
+
+I prefer to try using closures than to fix this.
+
+15:35 - starting closures.
+15:55 - failed :/ need to ask someone for an example.
+
+
+
+// TODO - improve drag feature.
+            - block at edges, drawing expands outside the canvas.
