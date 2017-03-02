@@ -11,8 +11,6 @@ var cardContainer = document.getElementById('card-container');
 function Card(id, value){
     this.id = id;
     this.value = value;
-
-    // TODO - add function - reveal and hide
 }
 
 function shuffle(array) {
@@ -124,6 +122,12 @@ var match = function(id1, id2){
     incrementAttempt();
     if(cards[id1].value === cards[id2].value){
         incrementMatch();
+        // remove event listeners
+        
+        // TODO - refactor clickHandler => currently cannot remove event listener as it isn't a separate function.
+
+        // document.getElementById(id1).removeEventListener('click', clickHandler);
+        // document.getElementById(id2).removeEventListener('click', clickHandler);
         if(matches === cards.length / 2){
             endGame();
         }
@@ -131,12 +135,12 @@ var match = function(id1, id2){
     }
     return false;
 }
-
+function clickHandler(){};
 function addClickers(){
-    var card1 = card2 = -1;
+    var card1 = card2 = -1; // -1 => no cards picked
     var cardElements = document.getElementsByClassName('card')
     for(var i = 0; i < cardElements.length; i++){
-        cardElements[i].addEventListener('click', function(){
+        cardElements[i].addEventListener('click', function clickHandler(){
             // reveal card
             reveal(this)
             // store card id
@@ -145,12 +149,12 @@ function addClickers(){
             } else { 
                 // test if same card was clicked
                 if(this.id === card1){
-                    console.log('double click');
                     return;
                 }
                 // block user from clicking more cards
                 var cover = document.getElementById('cover');
                 cover.style.display = 'block';
+
                 card2 = this.id;
                 if(!match(card1, card2)){
                     setTimeout(function(){
@@ -165,4 +169,4 @@ function addClickers(){
             }
         }, false);
     }
-}
+}    
