@@ -141,54 +141,55 @@ function init(){
     var h = window.innerHeight - 50; // '-50' is to make slightly smaller than view.
     var w = window.innerWidth - 50;
     setAttributes(canvas, {"height": h, "width": w}); 
-
+    // generate player
     var myPlayer = new Player(w, h);
-    
     myPlayer.draw();
     
+    // Create initial amount of invaders
     createInvaders(30, w);
     for(var i = 0; i < Invaders.length; i++){
         Invaders[i].draw();
     }
     
+    // Set event listeners
     document.addEventListener('keydown', function(e){
         // e.preventDefault();
         switch(e.which){
             case 37: // left
                 myPlayer.moveLeft();
-                console.log('moved L');
                 break;
             case 39: // right
                 myPlayer.moveRight();
-                console.log('moved R');
                 break;
             case 32: // space bar == 'shoot'
                 Bullets.push(new Bullet(myPlayer.getXLoc(), h - 20));
-                console.log(e.which);
                 break;
             default:
-                console.log(e.which);
                 break;
         }
     });
+    // start loop
     loop(w, h, myPlayer);
 }
 
-init();
-
-// temp loop
+// Main game functionality
+// set an interval for animation
+// move and re-draw all necessary elements after testing if visible or if 'killed'
 function loop(w, h, myPlayer){
     window.setInterval(function(){
         ctx.clearRect(0, 0, w, h);
         myPlayer.draw();
+        // move all invaders
         for(var i = 0; i < Invaders.length; i++){
             if(Invaders[i].isVisible()){
                 Invaders[i].move();
             }
         }
+        // move all visible bullets
         for(var j = 0; j < Bullets.length; j++){
             if(Bullets[j].isVisible()){
                 Bullets[j].move();
+                // test if the bullet should 'kill' an invader
                 if(testForInvaders(Bullets[j])){
                     Bullets[j].draw();
                 } else {
@@ -197,6 +198,7 @@ function loop(w, h, myPlayer){
                 }
             }
         }
+        // draw all visible invaders
         for(var l = 0; l < Invaders.length; l++){
             if(Invaders[l].isVisible()){
                 Invaders[l].draw();
@@ -204,3 +206,7 @@ function loop(w, h, myPlayer){
         }
     }, 100);
 }
+
+
+// Start a game
+init();
