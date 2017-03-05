@@ -26,7 +26,11 @@ function Player(x, y) {
             
         },
         moveRight: function(){
-            xLoc += 15;
+            if(xLoc <= w && (xLoc + 15) < (w - size)){
+                xLoc += 15;
+            } else {
+                xLoc = w - size;
+            }
         },
         draw: function(){
             ctx.fillStyle = "#000";
