@@ -3,6 +3,7 @@ const Invaders = [];
 const canvas = document.getElementById("myCanvas"),
     ctx = canvas.getContext("2d");
 const MAX_SPEED = 4;
+var h,w; // hold screen height and width
 
 /////////////////
 // Objects //////
@@ -17,7 +18,12 @@ function Player(x, y) {
 
     return {
         moveLeft: function(){
-            xLoc -= 15;
+            if(xLoc >= 0 && (xLoc - 15) > 0){
+                xLoc -= 15;
+            } else {
+                xLoc = 0;
+            }
+            
         },
         moveRight: function(){
             xLoc += 15;
@@ -33,10 +39,10 @@ function Player(x, y) {
 }
 
 // Invader Object
-function Invader(color, x){
+function Invader(color){
     var color = color, 
         radius = 20,
-        xLoc = Math.floor(Math.random() * (x - radius)) + radius, 
+        xLoc = Math.floor(Math.random() * (w - radius)) + radius, 
         yLoc = 0 - radius, 
         dy = Math.floor(Math.random() * MAX_SPEED) + 1, 
         visible = true;
@@ -63,9 +69,9 @@ function Invader(color, x){
     };
 }
 
-function Bullet(x, y){
+function Bullet(x){
     var xLoc = x;
-    var yLoc = y;
+    var yLoc = h - 20;
     var dy = 15;
     var visible = true;
 
@@ -104,11 +110,11 @@ function setAttributes(el, attrs) {
 // Create invaders and add to array
 // num is number of required invaders
 // maxXLoc is maximum x location for invader placement
-function createInvaders(num, maxXLoc){
+function createInvaders(num){
     for(var i = 0; i < num; i++){
         var color = 'rgb(' + Math.floor(Math.random() * 255) + ', ' +
                        Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
-        Invaders.push(new Invader(color, maxXLoc));
+        Invaders.push(new Invader(color));
     }
 }
 
@@ -138,15 +144,15 @@ function testForInvaders(bullet){
 // initialize game
 function init(){
     // Set canvas size
-    var h = window.innerHeight - 50; // '-50' is to make slightly smaller than view.
-    var w = window.innerWidth - 50;
+    h = window.innerHeight - 50; // '-50' is to make slightly smaller than view.
+    w = window.innerWidth - 50;
     setAttributes(canvas, {"height": h, "width": w}); 
     // generate player
     var myPlayer = new Player(w, h);
     myPlayer.draw();
     
     // Create initial amount of invaders
-    createInvaders(30, w);
+    createInvaders(30);
     for(var i = 0; i < Invaders.length; i++){
         Invaders[i].draw();
     }
@@ -162,20 +168,20 @@ function init(){
                 myPlayer.moveRight();
                 break;
             case 32: // space bar == 'shoot'
-                Bullets.push(new Bullet(myPlayer.getXLoc(), h - 20));
+                Bullets.push(new Bullet(myPlayer.getXLoc()));
                 break;
             default:
                 break;
         }
     });
     // start loop
-    loop(w, h, myPlayer);
+    loop(myPlayer);
 }
 
 // Main game functionality
 // set an interval for animation
 // move and re-draw all necessary elements after testing if visible or if 'killed'
-function loop(w, h, myPlayer){
+function loop(myPlayer){
     window.setInterval(function(){
         ctx.clearRect(0, 0, w, h);
         myPlayer.draw();
@@ -194,7 +200,7 @@ function loop(w, h, myPlayer){
                     Bullets[j].draw();
                 } else {
                     Bullets[j].removeVisibility();
-                    createInvaders(1, w);
+                    createInvaders(1);
                 }
             }
         }
