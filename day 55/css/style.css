@@ -1,0 +1,68 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+#modal {
+    position: absolute;
+    top: 100px;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    text-align: center;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    color: #1c2766;
+}
+
+#modal h1 {
+    letter-spacing: 3px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+#modal h3 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+#modal button {
+    border: none;
+    border-radius: none;
+    font-size: 22px;
+    padding: 10px 23px;
+    background-color: #7dc936;
+    color: white;
+    cursor: pointer;
+}
+
+#modal button:hover {
+    background-color: #588e26;
+}
+
+#footer {
+    width: 100%;
+    background-color: #1486b3;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+img {
+    display: none;
+}
+
+p {
+    color: #fff;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 8px;
+    font-size: 21px;
+}
