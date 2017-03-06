@@ -1,0 +1,49 @@
+Day 55 - Paratroopers
+
+Plan - 12:15
+
+Build a paratrooper game. An airplane flies across the ‘sky’ and user triggers paratroopers to jump. The paratroopers must land on the island in order to survive.
+Each round has a different goal (amount of paratroopers that must land successfully), different island size and location.
+
+Html - One big canvas.
+Css - locate canvas
+
+JS:
+
+Object -
+* plane (location, speed, move(), getLocation(), set/getSpeed()) + draw
+* paratrooper (location, move(), getLocation()) + draw
+* Island (location, getLocation()) + draw
+
+Loop -
+Plane move
+draw plane
+move all paratroopers
+if paratrooper-y-locaiton > someValue
+    if compare location( paratrooper island) {
+        score+1
+    else
+        lives-1
+draw island
+draw paratroopers
+
+Issue - add ‘physics’ - curve the fall of the paratroopers.
+
+tasks:
+1. html + css - layout
+2. js - plane ongoing.
+3. add island with tree
+4. add paratrooper - straight drop
+5. add 3 levels - including score display, game-over, and match paratrooper landed in island (see if restart is complex, if not implement as well)
+6. add - ‘physics’ - idea, get speed from plane as dx value, on move y+=dy, x+=dx, dx *= 0.8 (or any value that slowly decreases).
+7. add more rounds and restart (remember to unbind event listener)
+
+Start - 13:55
+1. (Already completed) - html+css - no game over modal. > next > js plane
+2. JS Plane - 13:25 - works as closure with all necessary methods. > next > add island with tree
+3. JS island - 13:50 - works. > next > paratrooper
+4. took a break, 14:15 - 14:40 complete with ‘physics’. > next > test if landed in island. [Didn’t start - took break]
+5. resumed coding at 22:05 - 22:30 - function can tell when paratrooper landed or died. > next > create lives and score and create update functions. BREAK
+6. resumed - 22:40 - 23:15 - game complete!!
+
+For tomorrow - need to start exercising how to remove event listeners.
