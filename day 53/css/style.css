@@ -1,0 +1,59 @@
+#myCanvas {
+    margin: 0 20px;
+}
+
+/* Score Board*/
+.score, .lives {
+    color: #ea4f4f;
+    position: absolute;
+    left: 10px;
+    display: inline;
+    font-size: 25px;
+}
+
+.score {
+    top: 10px;
+}
+
+.lives {
+    top: 45px;
+}
+
+#modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -125px;
+    z-index: 1;
+    border: 1px solid #292929;
+    background: #eee;
+    text-align: center;
+    padding: 20px;
+    height: 200px;
+    width: 250px;
+}
+
+#modal h1 {
+    margin-top: 20px;
+}
+
+#modal h2 {
+    margin-top: 10px;
+}
+
+#modal button {
+    margin-top: 30px;
+    box-shadow: none;
+    border: none;
+    background: #ea4f4f;
+    color: #fff;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+}
+
+#modal button:hover {
+    color: #bbb;
+}
