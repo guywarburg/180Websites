@@ -1,0 +1,28 @@
+DAy 56 - Hooray!
+
+start - 12:10
+Basic website where on a certain trigger confetti fall and gather at the bottom of the screen.
+
+html:
+create a small button and a large canvas
+
+css:
+style button, add some cool transition and animation
+
+js:
+auto create canvas attributes.
+on click create a bunch of confetti and make it fall to the bottom of the screen.
+play with z-index and speed to create a pretty animation.
+
+plan:
+1. html + css (basic layout)
+2. css - transition and animation (alternating lightbulbs - broadway style), can quickly look for gif.
+3. js: confetti object:
+    1. var - location (x, y, z), size, color.
+    2. methods - move, draw
+4. js: run with 
+
+Didn’t note start time, finished at 13:30
+
+Checking Jennifer’s script for improvements
+Her only difference is that she cuts out any confetti that reached the bottom into a separate array to improve performance.
