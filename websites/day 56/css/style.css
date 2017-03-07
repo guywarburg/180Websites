@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+button {
+    border: 1px solid #3c4975;
+    border-radius: none;
+    box-shadow: none;
+    background: #3c4975;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    height: 70px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    -webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+button:hover {
+    background: #fff;
+    color: #3c4975 ;
+}
+
+#myCanvas {
+    max-height: 100%;
+    max-width: 100%;
+}
