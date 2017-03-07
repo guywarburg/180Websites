@@ -1,0 +1,22 @@
+{
+  "name": "180-websites",
+  "version": "1.0.0",
+  "description": "Following <a href=\"http://blog.jenniferdewalt.com/archive\" target=\"_blank\">Jennifer Dewalt's</a> idea, I decided to build 180 websites in 180 days. The code isn't perfect. The sites aren't all useful or pretty, but hey, it's good practice.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guywarburg/180Websites.git"
+  },
+  "author": "Guy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guywarburg/180Websites/issues"
+  },
+  "homepage": "https://github.com/guywarburg/180Websites#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
