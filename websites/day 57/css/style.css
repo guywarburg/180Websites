@@ -1,0 +1,49 @@
+#modal {
+    display:none;
+
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#modal h1 {
+    margin-top: 100px;
+    font-size: 48px;
+    color: #172729;
+}
+
+#modal button {
+    border: none;
+    border-radius: none;
+    font-size: 22px;
+    padding: 10px 23px;
+    background-color: #0898ab;
+    border: 1px solid #0898ab;
+    color: white;
+    cursor: pointer;
+    margin-top: 200px;
+}
+
+#modal button:hover {
+    background-color: #fff;
+    color: #0898ab;
+}
+
+#footer {
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #0898ab;
+}
+
+#footer p {
+    display: inline-block;
+    margin-left: 16px;
+    font-size: 18px;
+}
