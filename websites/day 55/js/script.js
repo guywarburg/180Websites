@@ -92,7 +92,7 @@ function Paratrooper(xLoc, xSpeed){
             return {x: xLoc, y: yLoc};
         },
         draw: function(){
-            ctx.drawImage(troop, xLoc, yLoc, 80, 80); // set image height to 80px
+            ctx.drawImage(troop, xLoc, yLoc); // set image height to 80px
         },
         isVisible: function(){
             return visible;
