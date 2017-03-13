@@ -6,6 +6,27 @@ var h, w;
 const canonOffset = 50;
 const Bullets = [];
 const bugs = [];
+var myInterval;
+var level = 1;
+
+////////////
+// Levels //
+////////////
+
+const dataJSON = {
+    1: {
+        bugs: 3,
+        bullets: 10
+    },
+    2: {
+        bugs: 5,
+        bullets: 10
+    },
+    3: {
+        bugs: 7,
+        bullets: 10
+    }
+}
 
 ////////////
 // Objects//
@@ -63,6 +84,7 @@ function Bullet(h, angle, speed){
     var dy = - (speed * Math.sin(angle * (Math.PI / 180)));
     const radius = 8;
     const color = "#000";
+    var visible = true;
 
     return {
         draw: function(){
@@ -75,12 +97,31 @@ function Bullet(h, angle, speed){
             locX += dx;
             locY += dy;
             dy += 3;
+
+            if(locX > w || locY > h) {
+                this.removeVisibility();
+            }
+        },
+        getXLoc: function(){
+            return locX;
+        },
+        getYLoc: function(){
+            return locY;
+        },
+        isVisible: function(){
+            return visible;
+        },
+        removeVisibility: function(){
+            visible = false;
         }
     }
 }
 
 // Bug object
 function Bug(maxX, maxY) {
+    /**
+     * set bugs to sit in grid.
+     */
     const locX = (Math.random() * (maxX - canonOffset)) + canonOffset;
     const locY = Math.random() * (maxY - canonOffset);
     var visible = true;
@@ -90,8 +131,64 @@ function Bug(maxX, maxY) {
         isVisible: function() {
             return visible;
         },
+        removeVisibility: function(){
+            visible = false;
+        },
         draw: function(){
             ctx.drawImage(bug, locX, locY, 80, 50);
+        },
+        getXLoc: function(){
+            return locX;
+        },
+        getYLoc: function(){
+            return locY;
+        }
+    }
+}
+
+// Basic State implementation
+function State(x, y) {
+    const board = [];
+    const cellHeight = 50;
+    const cellWidth = 80;
+    // initialize empty board
+    // set 1st dimention of array to y axis
+    for(var i = 0; i < y / cellHeight; i++){
+        board[i] = [];
+        for (var j = 0; j < x / cellWidth; j++){
+            // fill the board with no bugs
+            board[i][j] = {bug: false, id: -1};
+        }
+    }
+    // Convert x,y location to board grid
+    function fitToGrid(x, y) {
+        var gridX = Math.floor(x / cellWidth);
+        var gridY = Math.floor(y / cellHeight);
+        
+        return {x: gridX, y: gridY};
+    }
+    
+
+    return {
+        addBug: function(LocX, LocY, id){
+            var location = fitToGrid(LocX, LocY);
+            console.log('Added bug to x: ' + location.x + ' and y: ' + location.y);
+            board[location.y][location.x] = {bug: true, id: id};
+            // console.log('Added bug to x: ' + location.x + ' and y: ' + location.y);
+        },
+        testForBug: function(LocX, LocY){
+            var location = fitToGrid(LocX, LocY);
+            if(location.y >= board.length || location.x >= board[location.y].length){
+                return false;
+            }
+            console.log('Is a bug in x: ' + location.x + ' and y: ' + location.y + '?');
+            console.log(board[location.y][location.x].bug);
+            return board[location.y][location.x].bug;
+        },
+        getBugId: function(LocX, LocY){
+            var location = fitToGrid(LocX, LocY);
+
+            return board[location.y][location.x].id;
         }
     }
 }
@@ -108,29 +205,71 @@ function setAttributes(el, attrs) {
     }
 }
 
+// Level up
+function levelUp(){
+    alert('Congratulations, You\'ve won the round!');
+}
+
+// game over
+function gameOver(){
+    clearInterval(myInterval);
+    alert('Sorry, you lose');
+}
+
+// Update ui with bullet count
+function removeBullet(){
+    var remainingBullets = document.getElementById('remaining-bullets');
+    bulletCount = parseInt(remainingBullets.innerHTML);
+    if(bulletCount === 0){
+        gameOver();
+        return;
+    }
+    remainingBullets.innerHTML = --bulletCount;
+}
+
+// set up screen
+function init(){
+
+}
+
 ///////////////
 // On Load ////
 ///////////////
 
-window.onload = function(){
+window.onload = function() {
     // set canvas
     var h = window.innerHeight - footerHeight;
     var w = window.innerWidth;
-    setAttributes(canvas, {"height": h, "width": w}); 
+    setAttributes(canvas, {"height": h, "width": w});
+    var totalBugs = 3; 
 
-    canon = new Canon(h);
-    // canon.draw();
-    for(var j = 0; j < 3; j++){
+
+    var canon = new Canon(h);
+    var gameState = new State(w, h);
+    
+    for(var j = 0; j < totalBugs; j++){
             bugs.push(new Bug(w, h));
+            gameState.addBug(bugs[j].getXLoc(), bugs[j].getYLoc(), j);
     }
-    window.setInterval(function(){
+    myInterval = window.setInterval(function(){
         ctx.clearRect(0, 0, w, h);
+        var counter = 0; // test how many bugs remaining
         for(var j = 0; j < bugs.length; j++){
-            bugs[j].draw();
+            if(bugs[j].isVisible()){
+                bugs[j].draw();
+                counter++;
+            }
         }
-        if (Bullets.length > 0){
-            for(var i = 0; i < Bullets.length; i++){
+        if(counter === 0) {
+            clearInterval(myInterval);
+            levelUp();
+        }
+        for(var i = 0; i < Bullets.length; i++){
+            if(Bullets[i].isVisible()){
                 Bullets[i].move();
+                if (gameState.testForBug(Bullets[i].getXLoc(), Bullets[i].getYLoc())){
+                    bugs[gameState.getBugId(Bullets[i].getXLoc(), Bullets[i].getYLoc())].removeVisibility();
+                }
                 Bullets[i].draw();
             }
         }
@@ -160,9 +299,10 @@ window.onload = function(){
                 break;
             case 32:
                 Bullets.push(new Bullet(h, canon.getAngle(), canon.getSpeed()));
+                removeBullet();
                 break;
             default:
                 break;
         }
     });
-}
+};
