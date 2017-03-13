@@ -1,0 +1,58 @@
+Day 57 - Bug Blaster
+
+canon game - a canon is placed in bottom left corner. user can change angle and power of bullet. bugs are placed on the screen and bullet kills them. each round there are a few bugs on the screen and to level up you must kill them all.
+
+Try to implement with a JS object of gameState which will include a two dimensional array representing the board.
+
+HTML + CSS:
+just a canvas
+
+JS:
+objects:
+- canon:
+    const location
+    var angle
+    var speed
+    function move (up/down)
+    function changePower(speed up/down)
+    function get(object of speed and angle)
+
+-bullet:
+    var location x
+    var location y
+    var direction x
+    var direction y
+    var speed
+
+not completely sure about plan.
+Want to try and implement the canon itself and then think again about the gameState.
+
+start: 15:30
+1. 15:45 - layout ready.
+
+Took some time off :/
+
+Plan - 
+* Layout (set)
+* Create Canon object (ready)
+* Add event listeners
+* create bullet object
+* test ‘fire’ function with canon
+* add bug object
+* try and add State object
+* test full game (one fixed round)
+* add rounds json
+
+Start - 15:35
+
+1. 15:55 - canon fully ready, might need to add a `get` function > next > bullet object
+2. 17:00 - bullet and canon ready! > next > adding bugs
+3. 17:30 - bug class ready > add ‘kill’ method
+
+Game functional - didn’t include reset...
+
+
+TODO:
+* ignore bullet flying over top of screen
+* Fix to three layer program such as in this example - http://gamedev.stackexchange.com/questions/11679/am-i-on-the-right-track-with-pong
+* add level up and game over overlays
