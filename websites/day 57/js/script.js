@@ -8,6 +8,7 @@ const Bullets = [];
 const bugs = [];
 var myInterval;
 var level = 1;
+var canon, gameState;
 
 ////////////
 // Levels //
@@ -174,7 +175,6 @@ function State(x, y) {
             var location = fitToGrid(LocX, LocY);
             console.log('Added bug to x: ' + location.x + ' and y: ' + location.y);
             board[location.y][location.x] = {bug: true, id: id};
-            // console.log('Added bug to x: ' + location.x + ' and y: ' + location.y);
         },
         testForBug: function(LocX, LocY){
             var location = fitToGrid(LocX, LocY);
@@ -208,11 +208,14 @@ function setAttributes(el, attrs) {
 // Level up
 function levelUp(){
     alert('Congratulations, You\'ve won the round!');
+    level++;
+    init();
 }
 
 // game over
 function gameOver(){
     clearInterval(myInterval);
+    ctx.clearRect(0, 0, w, h);
     alert('Sorry, you lose');
 }
 
@@ -227,30 +230,22 @@ function removeBullet(){
     remainingBullets.innerHTML = --bulletCount;
 }
 
-// set up screen
-function init(){
-
-}
-
-///////////////
-// On Load ////
-///////////////
-
-window.onload = function() {
-    // set canvas
-    var h = window.innerHeight - footerHeight;
-    var w = window.innerWidth;
-    setAttributes(canvas, {"height": h, "width": w});
-    var totalBugs = 3; 
-
-
-    var canon = new Canon(h);
-    var gameState = new State(w, h);
-    
+function generateBugs(totalBugs){
     for(var j = 0; j < totalBugs; j++){
             bugs.push(new Bug(w, h));
             gameState.addBug(bugs[j].getXLoc(), bugs[j].getYLoc(), j);
     }
+}
+
+// set up screen
+function init(){
+    console.log(dataJSON);
+    document.getElementById('remaining-bullets').innerHTML = dataJSON[level].bullets;
+    generateBugs(dataJSON[level].bugs);
+    gameLoop();
+}
+
+function gameLoop(){
     myInterval = window.setInterval(function(){
         ctx.clearRect(0, 0, w, h);
         var counter = 0; // test how many bugs remaining
@@ -275,12 +270,30 @@ window.onload = function() {
         }
         canon.draw();
     }, 50);
+}
 
+///////////////
+// On Load ////
+///////////////
+
+window.onload = function() {
+    // set canvas
+    h = window.innerHeight - footerHeight;
+    w = window.innerWidth;
+    setAttributes(canvas, {"height": h, "width": w});
+
+    canon = new Canon(h);
+    gameState = new State(w, h);
+    
+    init();
+
+    /* Event listeners */
+    // Close modal
     btnStart = document.getElementById('start');
-
     btnStart.addEventListener('click', function(){
-        initGame();
+        init();
     });
+    // keyboard functionality
     window.addEventListener('keydown', function(e){
         switch(e.which){
             case 38:
