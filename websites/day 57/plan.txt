@@ -49,11 +49,10 @@ Start - 15:35
 2. 17:00 - bullet and canon ready! > next > adding bugs
 3. 17:30 - bug class ready > add ‘kill’ method
 
-Game functional - didn’t include levels and reset...
+Game functional - didn’t include reset...
 
 
 TODO:
-* spli
-add levels
-
-Fix to three layer program such as in this example - http://gamedev.stackexchange.com/questions/11679/am-i-on-the-right-track-with-pong
+* ignore bullet flying over top of screen
+* Fix to three layer program such as in this example - http://gamedev.stackexchange.com/questions/11679/am-i-on-the-right-track-with-pong
+* add level up and game over overlays

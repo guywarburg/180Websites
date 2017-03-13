@@ -187,8 +187,12 @@ function State(x, y) {
         },
         getBugId: function(LocX, LocY){
             var location = fitToGrid(LocX, LocY);
-
             return board[location.y][location.x].id;
+        },
+        removeBug: function(LocX, LocY){
+            var location = fitToGrid(LocX, LocY);
+            board[location.y][location.x].bug = false;
+            board[location.y][location.x].id = -1;
         }
     }
 }
@@ -264,6 +268,7 @@ function gameLoop(){
                 Bullets[i].move();
                 if (gameState.testForBug(Bullets[i].getXLoc(), Bullets[i].getYLoc())){
                     bugs[gameState.getBugId(Bullets[i].getXLoc(), Bullets[i].getYLoc())].removeVisibility();
+                    gameState.removeBug(Bullets[i].getXLoc(), Bullets[i].getYLoc());
                 }
                 Bullets[i].draw();
             }
